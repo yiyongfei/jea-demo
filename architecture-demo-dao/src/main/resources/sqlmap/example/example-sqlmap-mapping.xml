@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.architecture.example.dao.impl.ExampleDAOImpl">
+
+	<select id="countAll" resultType="int">
+		SELECT count(1) FROM EXAMPLE_USERS
+	</select>
+	
+	<select id="queryAll" resultType="com.architecture.example.po.ExampleUsersPO">
+		SELECT id, username, password FROM EXAMPLE_USERS
+	</select>
+	
+	<select id="queryByName" parameterType="String" resultType="com.architecture.example.po.ExampleUsersPO">
+		SELECT id as userId, username, password FROM EXAMPLE_USERS where username = #{username}
+	</select>
+</mapper>

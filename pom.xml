@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.team</groupId>
+  <artifactId>architecture-demo</artifactId>
+  <packaging>pom</packaging>
+  <version>0.0.1</version>
+  <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <junit.version>4.11</junit.version>
+      <spring.version>4.0.0.RELEASE</spring.version>
+      <mybatis.version>3.2.8</mybatis.version>
+      <mybatis.spring.version>1.2.2</mybatis.spring.version>
+      <hibernate.version>4.2.12.Final</hibernate.version>
+      <druid.version>1.0.9</druid.version>
+      <aspectj.version>1.7.4</aspectj.version>
+      <javassist.version>3.18.1-GA</javassist.version>
+      <postgresql.version>9.3-1102-jdbc41</postgresql.version>
+      <cxf.version>3.0.1</cxf.version>
+      <javax.ws.rs.version>2.0.1</javax.ws.rs.version>
+      <servlet.version>2.5</servlet.version>
+      <httpclient.version>4.3.2</httpclient.version>
+      <jackson.version>2.3.1</jackson.version>
+      <kryo.version>3.0.0</kryo.version>
+      <jedis.version>2.6.0</jedis.version>
+      <jodd.version>3.6.2</jodd.version>
+      <logback.version>1.1.2</logback.version>
+      <slf4j.version>1.7.7</slf4j.version>
+      <storm.version>0.9.3</storm.version>
+      <activemq.version>5.10.0</activemq.version>
+  </properties>
+  <dependencies>
+
+    <!-- dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
+    </dependency>
+    
+	<dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-classic</artifactId>
+	    <version>${logback.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-core</artifactId>
+	    <version>${logback.version}</version>
+	</dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>log4j-over-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency -->
+    
+    <!-- spring framework -->
+    <!-- dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>${spring.version}</version>
+	    <scope>provided</scope>
+	</dependency>  
+    <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${spring.version}</version>
+	    <scope>provided</scope>
+	</dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring.version}</version>
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-orm</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-expression</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>${spring.version}</version>
+    </dependency -->
+    <!-- mybatis spring支持 -->
+    <!-- dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>${mybatis.version}</version>
+	</dependency>
+    <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis-spring</artifactId>
+        <version>${mybatis.spring.version}</version>
+    </dependency -->
+    
+    <!-- hibernate支持 -->
+    <!-- dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-entitymanager</artifactId>
+        <version>${hibernate.version}</version>
+    </dependency>
+    
+    <dependency>
+        <groupId>org.javassist</groupId>
+        <artifactId>javassist</artifactId>
+        <version>${javassist.version}</version>
+    </dependency -->
+    
+    <!-- 数据库连接支持 -->
+	<!-- dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>druid</artifactId>
+	    <version>${druid.version}</version>
+	</dependency -->
+	
+	<!-- 数据库驱动支持 -->
+	<dependency>
+	    <groupId>org.postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>${postgresql.version}</version>
+	</dependency>
+	
+	<!-- AspectJ -->
+    <!-- dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId>
+        <version>${aspectj.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>${aspectj.version}</version>
+    </dependency -->
+    
+    <!-- Web应用支持 -->
+    <!-- dependency>  
+        <groupId>javax.ws.rs</groupId>  
+        <artifactId>javax.ws.rs-api</artifactId>  
+        <version>${javax.ws.rs.version}</version>  
+    </dependency -->
+	<!-- dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>servlet-api</artifactId>
+        <version>${servlet.version}</version>
+	</dependency -->
+	<!-- dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>${httpclient.version}</version>
+	</dependency -->
+		
+	<!-- Webservice支持，支持SOAP和REST -->
+    <!-- dependency>  
+        <groupId>org.apache.cxf</groupId>  
+        <artifactId>cxf-rt-frontend-jaxws</artifactId>  
+        <version>${cxf.version}</version>  
+    </dependency>
+    <dependency>  
+        <groupId>org.apache.cxf</groupId>  
+        <artifactId>cxf-rt-frontend-jaxrs</artifactId>  
+        <version>${cxf.version}</version>  
+    </dependency -->
+
+	<!-- JSON支持 -->
+	<!-- dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-core</artifactId>
+	    <version>${jackson.version}</version>
+	</dependency>
+	<dependency>  
+	    <groupId>com.fasterxml.jackson.dataformat</groupId>  
+	    <artifactId>jackson-dataformat-xml</artifactId>  
+	    <version>${jackson.version}</version>  
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>${jackson.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.jaxrs</groupId>
+	    <artifactId>jackson-jaxrs-json-provider</artifactId>
+	    <version>${jackson.version}</version>
+	</dependency -->
+	
+	<!-- 序列化支持 -->
+	<!-- dependency>
+	    <groupId>com.esotericsoftware</groupId>
+	    <artifactId>kryo</artifactId>
+	    <version>${kryo.version}</version>
+	</dependency -->
+	
+	<!-- 缓存服务器支持，Redis和Memcached -->
+  	<!-- dependency>
+	    <groupId>redis.clients</groupId>
+	    <artifactId>jedis</artifactId>
+	    <version>${jedis.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.googlecode.xmemcached</groupId>
+	    <artifactId>xmemcached</artifactId>
+	    <version>2.0.0</version>
+	</dependency -->
+	
+	<!-- Storm支持，但发布到Storm远程节点时不能将其打入Jar包内 -->
+	<dependency>
+	    <groupId>org.apache.storm</groupId>
+	    <artifactId>storm-core</artifactId>
+	    <version>${storm.version}</version>
+	    <scope>provided</scope>
+	</dependency>
+
+    <!-- Jodd支持，主要用于类型转换和读取Prop配置文件 -->
+	<!-- dependency>
+	    <groupId>org.jodd</groupId>
+	    <artifactId>jodd-core</artifactId>
+	    <version>${jodd.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.jodd</groupId>
+	    <artifactId>jodd-bean</artifactId>
+	    <version>${jodd.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.jodd</groupId>
+	    <artifactId>jodd-props</artifactId>
+	    <version>${jodd.version}</version>
+	</dependency -->
+
+	<!-- ActiveMQ支持，注意activemq-all里的slf引用，与storm有冲突，不建议直接使用 -->
+	<!-- dependency>
+	    <groupId>org.apache.activemq</groupId>
+	    <artifactId>activemq-pool</artifactId>
+	    <version>${activemq.version}</version>
+	</dependency -->
+	
+	<dependency>
+        <groupId>com.ea</groupId>
+        <artifactId>architecture-achieve</artifactId>
+        <version>0.0.1</version>
+    </dependency>
+	
+  </dependencies>
+  <build>
+    <finalName>architecture-demo</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>  
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>  
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+  </build>
+  <modules>
+  	<module>architecture-demo-dao</module>
+  	<module>architecture-demo-service</module>
+  	<module>architecture-demo-bridge</module>
+  	<module>architecture-demo-facade</module>
+    <module>architecture-demo-web</module>
+    <module>architecture-demo-common</module>
+    <module>architecture-demo-integration</module>
+  </modules>
+</project>

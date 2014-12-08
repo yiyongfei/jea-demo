@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:jaxws="http://cxf.apache.org/jaxws"
+  xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+  xsi:schemaLocation=" 
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+    http://cxf.apache.org/jaxws 
+    http://cxf.apache.org/schemas/jaxws.xsd
+    http://cxf.apache.org/jaxrs
+    http://cxf.apache.org/schemas/jaxrs.xsd">
+    
+    <import resource="classpath:META-INF/cxf/cxf.xml"/>
+    <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+
+	<!-- WebService目录扫描，使用的Controller放在*.web.rest或*.web.soap -->
+	<context:component-scan base-package="com.architecture.example.web.rest com.architecture.example.web.soap"></context:component-scan>
+	
+	<!-- SOAP服务方的配置 -->
+	<!-- #exampleSOAP，表示将引用exampleSOAP实例，该实例已经通过注解的方式生成 -->
+	<jaxws:endpoint id="helloSOAP" implementor="#exampleSOAP" address="/HelloSOAP" />
+	
+	
+	<!-- 使用REST服务时，通过jackson将对象序列化成JSON进行转递 -->
+    <bean id="jacksonObjectMapper"
+        class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean"></bean>
+    <bean id="jacksonProvider" class="com.fasterxml.jackson.jaxrs.json.JacksonJaxbJsonProvider">
+        <property name="mapper" ref="jacksonObjectMapper" />
+    </bean>
+
+	<!-- REST服务方的配置 -->
+	<!-- 这里的地址很重要，客户端需要通过这个地址来访问WebService -->
+	<jaxrs:server id="helloREST" address="/HelloREST">
+	    <jaxrs:serviceBeans>
+	        <ref bean="exampleREST" />
+	    </jaxrs:serviceBeans>
+	    <jaxrs:extensionMappings>
+	        <entry key="json" value="application/json" />
+	        <entry key="xml" value="application/xml" />
+	    </jaxrs:extensionMappings>
+	    <jaxrs:providers>
+            <ref bean="jacksonProvider"/>
+        </jaxrs:providers>
+	</jaxrs:server>
+	
+</beans>
