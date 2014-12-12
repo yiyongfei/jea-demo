@@ -46,7 +46,7 @@ public class IntegrationTest {
 //				}
 //			}
 			
-			example.deleteBySoap("ca89d0e195e84daabbab0d2bdba2e928");
+			example.deleteBySoap("30e52acc02774941bb767c3324758b6c");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
