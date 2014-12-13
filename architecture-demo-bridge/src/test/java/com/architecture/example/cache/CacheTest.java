@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.architecture.example.dto.ExampleUsersDTO;
 import com.ea.core.base.dto.DynamicDTO;
+import com.ea.core.cache.CacheConstants;
 import com.ea.core.cache.CacheContext;
 
 import org.junit.Test;
@@ -24,14 +25,19 @@ public class CacheTest {
 	@Test
 	public void testCache() {
 		ExampleUsersDTO exampleDto = new ExampleUsersDTO();
-		exampleDto.setUserId("woijjfkdfjoiwjer9rifdf");
+		exampleDto.setUserId("woijjfkdfjoiwjer9rifdf4444");
 		exampleDto.setUsername("王小五");
 		exampleDto.setPassword("wiejrie");
-		Object obj;
+		ExampleUsersDTO obj;
 		try {
-			cacheContext.set("dto", exampleDto, 100);
-			obj = cacheContext.get("dto");
-			System.out.println(obj);
+//			cacheContext.clean("dto");
+			Boolean result = cacheContext.set(CacheConstants.CACHE_LEVEL.L1.getCode(),"dtoL1", exampleDto, 100000);
+			System.out.println(result);
+			if(result){
+				obj = (ExampleUsersDTO) cacheContext.get("dtoL1");
+				System.out.println(obj.getUserId());
+			}
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

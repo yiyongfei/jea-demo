@@ -19,17 +19,17 @@
 	<context:component-scan base-package="com.ea"></context:component-scan>
 
 	<context:property-placeholder ignore-resource-not-found="true"
-			location="classpath*:/ea-core.properties
+			location="classpath*:/jea-core.properties
           			  " />
     <!-- 配置数据源(连接池，druid) -->  
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
 	    <!-- 数据源驱动类可不写，Druid默认会自动根据URL识别DriverClass -->
-	    <property name="driverClassName" value="org.postgresql.Driver" />
+	    <property name="driverClassName" value="${db.driver}" />
 
 		<!-- 基本属性 url、user、password -->
-		<property name="url" value="jdbc:postgresql://127.0.0.1:5432/architecturedb" />
-		<property name="username" value="dbuser" />
-		<property name="password" value="dbuser" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" /> 
 
 		<!-- 配置初始化大小、最小、最大 -->
 		<property name="initialSize" value="3" />
@@ -70,7 +70,7 @@
         <property name="hibernateProperties">
             <props>
                 <!-- <prop key="hibernate.hbm2ddl.auto">update</prop> -->
-                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+                <prop key="hibernate.dialect">${db.hibernate.dialect}</prop>
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.cache.use_second_level_cache">false</prop>  
                 <prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
